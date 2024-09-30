@@ -1,388 +1,525 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marc Pallares Landing</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
-    <div class="flex items-center py-4 overflow-x-auto whitespace-nowrap">
-      <a href="#" class="text-gray-600 dark:text-gray-200">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-      </a>
-  
-      <span class="mx-5 text-gray-500 dark:text-gray-300">
-          /
-      </span>
-  
-      <a href="#" class="text-gray-600 dark:text-gray-200 hover:underline">
-          Account
-      </a>
-  
-      <span class="mx-5 text-gray-500 dark:text-gray-300">
-          /
-      </span>
-  
-      <a href="#" class="text-gray-600 dark:text-gray-200 hover:underline">
-          Profile
-      </a>
-  
-      <span class="mx-5 text-gray-500 dark:text-gray-300">
-          /
-      </span>
-  
-      <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
-          Settings
-      </a>
-  </div>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+       
+            <li><a href="#" data-target="projects">Projectes</a></li>
+            <li><a href="#" data-target="skills">Habilitats</a></li>
+            <li><a href="#" data-target="home">Inici</a></li>
+            <li><a href="#" data-target="social">Xarxes Socials</a></li>
+            <li><a href="#" data-target="contact">Contacte</a></li>
 
-  <section class="bg-white dark:bg-gray-900"></section>
-    <div class="container px-6 py-8 mx-auto">
-        <h2 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Our Team</h2>
+        </ul>
+    </nav>
 
-        <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div class="w-full max-w-xs text-center">
-                <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=739&q=80" alt="avatar" />
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="toggle">
+            <span class="slider"></span>
+        </label>
+        <span id="mode-text">Modo Claro</span>
+    </div>
+       <script>
 
-                <div class="mt-2">
-                    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Ahmed Omer</h3>
-                    <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">CEO</span>
-                </div>
-            </div>
+const toggle = document.getElementById('toggle');
+const modeText = document.getElementById('mode-text');
+const body = document.body;
 
-            <div class="w-full max-w-xs text-center">
-                <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1516756587022-7891ad56a8cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
+toggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    modeText.textContent = toggle.checked ? 'Modo Oscuro' : 'Modo Claro';
+});
 
-                <div class="mt-2">
-                    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Jane Doe</h3>
-                    <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">Co-founder</span>
-                </div>
-            </div>
 
-            <div class="w-full max-w-xs text-center">
-                <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=731&q=80" alt="avatar" />
 
-                <div class="mt-2">
-                    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Steve Ben</h3>
-                    <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">UI/UX</span>
-                </div>
-            </div>
+    </script>
 
-            <div class="w-full max-w-xs text-center">
-                <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
 
-                <div class="mt-2">
-                    <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">Patterson Johnson</h3>
-                    <span class="mt-1 font-medium text-gray-600 dark:text-gray-300">Software Engineer</span>
-                </div>
-            </div>
+  <!-- Página Inici -->
+<!-- Página Inici -->
+<section id="home" class="hero active"> <!-- Activa por defecto -->
+    <div class="container">
+        <h1 class="hero-title">Hola, soc Marc Pallares</h1>
+        <p class="hero-subtitle">Soc estudiant de DAM.</p>
+        
+        <a href="#contact" data-target="contact" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
+
+        <h2>Sobre Mí</h2>
+        <p>Hola! Sóc Marc Pallares, un apassionat del desenvolupament web i la programació. Actualment, estic estudiant Desenvolupament d'Aplicacions Multiplataforma (DAM) i m'agrada explorar noves tecnologies i eines per crear projectes innovadors. Em dedico a aprendre llenguatges com HTML, CSS, JavaScript i frameworks com React.</p>
+        
+        <p>A més del meu interès per la tecnologia, gaudeixo de la música i el cinema, i m'agrada passar temps a la natura. Sempre estic a la recerca de noves oportunitats d'aprenentatge i creixement professional. Si t'interessa la meva feina o vols col·laborar, no dubtis a posar-te en contacte amb mi!</p>
+        
+        <!-- Logo arriba del mapa -->
+        <div class="logo-container">
+            <img src="/img/img1.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4290359664274!2d0.5126917765679695!3d40.81483093131317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a0e4bd4079a9d1%3A0x253c0ed9489c50f8!2sInstitut%20de%20l'Ebre!5e1!3m2!1sca!2ses!4v1727289760839!5m2!1sca!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </section>
 
-<section class="container px-4 mx-auto">
-  <h2 class="text-lg font-medium text-gray-800 dark:text-white">Customers</h2>
+    <!-- Sección de Projectes -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projectes</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <a href="https://github.com/Mpallares1/Mpallares1" target="_blank">
+                        <img src="/img/img1.png" alt="Proyecto 1">
+                        <h3>Mi Biografia</h3>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/Mpallares1/Mpallares1" target="_blank">
+                        <img src="img/imatge2.jpeg" alt="Proyecto 2">
+                        <h3>Codigo</h3>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="https://github.com/Mpallares1/Mpallares1" target="_blank">
+                        <img src="img/imatge3.jpeg" alt="Proyecto 3">
+                        <h3>Pagina Web</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <!-- Sección de Habilitats -->
+<section id="skills">
+    <div class="container">
+        <h2>Habilitats</h2>
+        <div class="skill-list">
+            <div class="skill-item">
+                <h3>HTML</h3>
+                <div class="progress-bar">
+                    <div class="progress" data-skill-level="85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>CSS</h3>
+                <div class="progress-bar">
+                    <div class="progress" data-skill-level="85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <div class="progress" data-skill-level="50%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <h3>React</h3>
+                <div class="progress-bar">
+                    <div class="progress" data-skill-level="10%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const skills = document.querySelectorAll('.progress');
+    skills.forEach(skill => {
+        const level = skill.getAttribute('data-skill-level');
+        skill.style.width = level; // Asignar el ancho basado en el atributo data
+    });
+});
 
-  <p class="mt-1 text-sm text-gray-500 dark:text-gray-300">These companies have purchased in the last 12 months.</p>
-
-  <div class="flex flex-col mt-6">
-      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-              <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-
-                  <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                      <thead class="bg-gray-50 dark:bg-gray-800">
-                          <tr>
-                              <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                  <button class="flex items-center gap-x-3 focus:outline-none">
-                                      <span>Company</span>
-
-                                      <svg class="h-3" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M2.13347 0.0999756H2.98516L5.01902 4.79058H3.86226L3.45549 3.79907H1.63772L1.24366 4.79058H0.0996094L2.13347 0.0999756ZM2.54025 1.46012L1.96822 2.92196H3.11227L2.54025 1.46012Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
-                                          <path d="M0.722656 9.60832L3.09974 6.78633H0.811638V5.87109H4.35819V6.78633L2.01925 9.60832H4.43446V10.5617H0.722656V9.60832Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
-                                          <path d="M8.45558 7.25664V7.40664H8.60558H9.66065C9.72481 7.40664 9.74667 7.42274 9.75141 7.42691C9.75148 7.42808 9.75146 7.42993 9.75116 7.43262C9.75001 7.44265 9.74458 7.46304 9.72525 7.49314C9.72522 7.4932 9.72518 7.49326 9.72514 7.49332L7.86959 10.3529L7.86924 10.3534C7.83227 10.4109 7.79863 10.418 7.78568 10.418C7.77272 10.418 7.73908 10.4109 7.70211 10.3534L7.70177 10.3529L5.84621 7.49332C5.84617 7.49325 5.84612 7.49318 5.84608 7.49311C5.82677 7.46302 5.82135 7.44264 5.8202 7.43262C5.81989 7.42993 5.81987 7.42808 5.81994 7.42691C5.82469 7.42274 5.84655 7.40664 5.91071 7.40664H6.96578H7.11578V7.25664V0.633865C7.11578 0.42434 7.29014 0.249976 7.49967 0.249976H8.07169C8.28121 0.249976 8.45558 0.42434 8.45558 0.633865V7.25664Z" fill="currentColor" stroke="currentColor" stroke-width="0.3" />
-                                      </svg>
-                                  </button>
-                              </th>
-
-                              <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                  Status
-                              </th>
-
-                              <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                  About
-                              </th>
-
-                              <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Users</th>
-
-                              <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">License use</th>
-
-                              <th scope="col" class="relative py-3.5 px-4">
-                                  <span class="sr-only">Edit</span>
-                              </th>
-                          </tr>
-                      </thead>
-                      <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                          <tr>
-                              <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div>
-                                      <h2 class="font-medium text-gray-800 dark:text-white ">Catalog</h2>
-                                      <p class="text-sm font-normal text-gray-600 dark:text-gray-400">catalogapp.io</p>
-                                  </div>
-                              </td>
-                              <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                      Customer
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div>
-                                      <h4 class="text-gray-700 dark:text-gray-200">Content curating app</h4>
-                                      <p class="text-gray-500 dark:text-gray-400">Brings all your news into one place</p>
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="flex items-center">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <p class="flex items-center justify-center w-6 h-6 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                      <div class="bg-blue-500 w-2/3 h-1.5"></div>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                      </svg>
-                                  </button>
-                              </td>
-                          </tr>
-
-                          <tr>
-                              <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div>
-                                      <h2 class="font-medium text-gray-800 dark:text-white ">Circooles</h2>
-                                      <p class="text-sm font-normal text-gray-600 dark:text-gray-400">getcirooles.com</p>
-                                  </div>
-                              </td>
-                              <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div class="inline px-3 py-1 text-sm font-normal text-gray-500 bg-gray-100 rounded-full dark:text-gray-400 gap-x-2 dark:bg-gray-800">
-                                      Churned
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div>
-                                      <h4 class="text-gray-700 dark:text-gray-200">Design software</h4>
-                                      <p class="text-gray-500 dark:text-gray-400">Super lightweight design app</p>
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="flex items-center">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <p class="flex items-center justify-center w-6 h-6 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                      <div class="bg-blue-500 w-2/5 h-1.5"></div>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                      </svg>
-                                  </button>
-                              </td>
-                          </tr>
-
-                          <tr>
-                              <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div>
-                                      <h2 class="font-medium text-gray-800 dark:text-white ">Sisyphus</h2>
-                                      <p class="text-sm font-normal text-gray-600 dark:text-gray-400">sisyphus.com</p>
-                                  </div>
-                              </td>
-                              <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                      Customer
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div>
-                                      <h4 class="text-gray-700 dark:text-gray-200">Automation and workflow</h4>
-                                      <p class="text-gray-500 dark:text-gray-400">Time tracking, invoicing and expenses</p>
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="flex items-center">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <p class="flex items-center justify-center w-6 h-6 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                      <div class="bg-blue-500 w-11/12 h-1.5"></div>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                      </svg>
-                                  </button>
-                              </td>
-                          </tr>
-
-                          <tr>
-                              <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div>
-                                      <h2 class="font-medium text-gray-800 dark:text-white ">Hourglass</h2>
-                                      <p class="text-sm font-normal text-gray-600 dark:text-gray-400">hourglass.app</p>
-                                  </div>
-                              </td>
-                              <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div class="inline px-3 py-1 text-sm font-normal text-gray-500 bg-gray-100 rounded-full dark:text-gray-400 gap-x-2 dark:bg-gray-800">
-                                      Churned
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div>
-                                      <h4 class="text-gray-700 dark:text-gray-200">Productivity app</h4>
-                                      <p class="text-gray-500 dark:text-gray-400">Time management and productivity</p>
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="flex items-center">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <p class="flex items-center justify-center w-6 h-6 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                      <div class="bg-blue-500 w-1/3 h-1.5"></div>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                      </svg>
-                                  </button>
-                              </td>
-                          </tr>
-
-                          <tr>
-                              <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div>
-                                      <h2 class="font-medium text-gray-800 dark:text-white ">Quotient</h2>
-                                      <p class="text-sm font-normal text-gray-600 dark:text-gray-400">quotient.co</p>
-                                  </div>
-                              </td>
-                              <td class="px-12 py-4 text-sm font-medium whitespace-nowrap">
-                                  <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                                      Customer
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div>
-                                      <h4 class="text-gray-700 dark:text-gray-200">Sales CRM</h4>
-                                      <p class="text-gray-500 dark:text-gray-400">Web-based sales doc management</p>
-                                  </div>
-                              </td>
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="flex items-center">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80" alt="">
-                                      <img class="object-cover w-6 h-6 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80" alt="">
-                                      <p class="flex items-center justify-center w-6 h-6 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <div class="w-48 h-1.5 bg-blue-200 overflow-hidden rounded-full">
-                                      <div class="bg-blue-500 w-1/6 h-1.5"></div>
-                                  </div>
-                              </td>
-
-                              <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                  <button class="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg dark:text-gray-300 hover:bg-gray-100">
-                                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                      </svg>
-                                  </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <div class="flex items-center justify-between mt-6">
-      <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-          </svg>
-
-          <span>
-              previous
-          </span>
-      </a>
-
-      <div class="items-center hidden md:flex gap-x-3">
-          <a href="#" class="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60">1</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">2</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">3</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">...</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">12</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">13</a>
-          <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">14</a>
-      </div>
-
-      <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-          <span>
-              Next
-          </span>
-
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-          </svg>
-      </a>
-  </div>
+    </script>
 </section>
-  </body>
+
+
+    
+
+<!-- Sección de Contacte -->
+<section id="contact">
+    <div class="container">
+        <h2>Contacta amb mi</h2>
+        <p>Pots contactar amb mi a traves del Gmail. Reompli el formulari .</p>
+        <form action="https://formspree.io/f/xblrnlld" method="POST" class="contact-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Tu correo" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" placeholder="Asunto" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Tu mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+</section>
+
+
+
+<!-- Xarxes Socials Sociales -->
+<section id="social">
+    <div class="container">
+        <h2>Xarxes Socials</h2>
+        <p>Pots entrar a les meves Xarxes Socials per obtenir mes informacio sobre mi o poder contactar amb mi per les mateixes.</p>
+        <ul class="social-links">
+            <li>
+                <a href="https://x.com/niunnap36759" target="_blank" class="social-link">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/twitter.png" alt="Twitter" />
+                    Twitter
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/marc-pallar%C3%A8s-pino-3aba83201/" target="_blank" class="social-link">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" />
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/mpallares1" target="_blank" class="social-link">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" />
+                    GitHub
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <div class="card">
+          <svg
+            fill-rule="nonzero"
+            height="30px"
+            width="30px"
+            viewBox="0,0,256,256"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+            class="instagram"
+          >
+            <g
+              style="mix-blend-mode: normal"
+              text-anchor="none"
+              font-size="none"
+              font-weight="none"
+              font-family="none"
+              stroke-dashoffset="0"
+              stroke-dasharray=""
+              stroke-miterlimit="10"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+              stroke-width="1"
+              stroke="none"
+              fill-rule="nonzero"
+            >
+              <g transform="scale(8,8)">
+                <path
+                  d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            height="30px"
+            width="30px"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+            class="twitter"
+          >
+            <path
+              d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"
+            ></path>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            height="30px"
+            width="30px"
+            viewBox="0 0 40 40"
+            xmlns="http://www.w3.org/2000/svg"
+            class="dribble"
+          >
+            <path
+              d="M20,38.5C9.799,38.5,1.5,30.201,1.5,20S9.799,1.5,20,1.5S38.5,9.799,38.5,20S30.201,38.5,20,38.5z"
+            ></path>
+            <path
+              d="M20,2c9.925,0,18,8.075,18,18s-8.075,18-18,18S2,29.925,2,20S10.075,2,20,2 M20,1 C9.507,1,1,9.507,1,20s8.507,19,19,19s19-8.507,19-19S30.493,1,20,1L20,1z"
+              fill="#ea4c89"
+            ></path>
+            <path
+              d="M28.352 36.914c0 0-3.032-21.087-15.63-34.292M1.269 17.848c0 0 24.2 2.117 32.075-11.102M7.804 34.152c0 0 8.624-19.807 31.058-12.194"
+              stroke-miterlimit="10"
+              stroke="#ea4c89"
+              fill="none"
+            ></path>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            height="30px"
+            width="30px"
+            viewBox="0 0 50 50"
+            xmlns="http://www.w3.org/2000/svg"
+            class="codepen"
+          >
+            <path
+              d="M 25 4 L 4 17.34375 L 4 32.652344 L 25 46 L 46 32.65625 L 46 17.34375 Z M 25 29.183594 L 19.066406 25.070313 L 25 21.023438 L 30.933594 25.070313 Z M 27 17.605469 L 27 9.949219 L 40.429688 18.484375 L 34.410156 22.65625 Z M 23 17.605469 L 15.589844 22.65625 L 9.570313 18.484375 L 23 9.949219 Z M 12.09375 25.042969 L 8 27.832031 L 8 22.203125 Z M 15.570313 27.453125 L 23 32.605469 L 23 40.050781 L 9.589844 31.527344 Z M 27 32.605469 L 34.429688 27.453125 L 40.410156 31.527344 L 27 40.050781 Z M 37.90625 25.042969 L 42 22.203125 L 42 27.832031 Z"
+            ></path>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+            height="23px"
+            width="23px"
+            class="uiverse"
+          >
+            <path
+              fill="url(#paint0_linear_501_142)"
+              d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 3.8147e-06 49.2967 3.8147e-06 40.5456V4.82927C3.8147e-06 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z"
+            ></path>
+            <path
+              fill="url(#paint1_linear_501_142)"
+              d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z"
+            ></path>
+            <path
+              fill="url(#paint2_linear_501_142)"
+              d="M2.86102e-06 83.2195C2.86102e-06 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707L2.86102e-06 83.2195Z"
+            ></path>
+            <defs>
+              <linearGradient
+                gradientUnits="userSpaceOnUse"
+                y2="87.6201"
+                x2="96.1684"
+                y1="0"
+                x1="0"
+                id="paint0_linear_501_142"
+              >
+                <stop stop-color="#BF66FF"></stop>
+                <stop stop-color="#6248FF" offset="0.510417"></stop>
+                <stop stop-color="#00DDEB" offset="1"></stop>
+              </linearGradient>
+              <linearGradient
+                gradientUnits="userSpaceOnUse"
+                y2="87.6201"
+                x2="96.1684"
+                y1="0"
+                x1="0"
+                id="paint1_linear_501_142"
+              >
+                <stop stop-color="#BF66FF"></stop>
+                <stop stop-color="#6248FF" offset="0.510417"></stop>
+                <stop stop-color="#00DDEB" offset="1"></stop>
+              </linearGradient>
+              <linearGradient
+                gradientUnits="userSpaceOnUse"
+                y2="87.6201"
+                x2="96.1684"
+                y1="0"
+                x1="0"
+                id="paint2_linear_501_142"
+              >
+                <stop stop-color="#BF66FF"></stop>
+                <stop stop-color="#6248FF" offset="0.510417"></stop>
+                <stop stop-color="#00DDEB" offset="1"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            width="30px"
+            height="30px"
+            class="discord"
+          >
+            <path
+              d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"
+            ></path>
+          </svg>
+        </div>
+        <div class="card">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <svg
+                  height="30px"
+                  width="30px"
+                  viewBox="0 0 30 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="github"
+              >
+                  <path
+                      d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
+                  ></path>
+              </svg>
+          </a>
+      </div>
+      
+        <div class="card">
+          <svg
+            height="30px"
+            width="30px"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+            class="telegram"
+          >
+            <path d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
+            <path
+              d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"
+              fill="#fff"
+            ></path>
+            <path
+              d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"
+              fill="#b0bec5"
+            ></path>
+            <path
+              d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"
+              fill="#cfd8dc"
+            ></path>
+          </svg>
+        </div>
+        <div class="card">
+          <svg
+            xml:space="preserve"
+            viewBox="0 0 256 256"
+            height="30"
+            width="30"
+            version="1.1"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg"
+            class="reddit"
+          >
+            <defs></defs>
+            <g
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+              style="stroke: none; border-radius:50%; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+            >
+              <circle
+                transform="matrix(1 0 0 1 0 0)"
+                style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;"
+                r="45"
+                cy="45"
+                cx="45"
+              ></circle>
+              <path
+                stroke-linecap="round"
+                transform="matrix(1 0 0 1 0 0)"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;"
+                d="M 75.011 45 c -0.134 -3.624 -3.177 -6.454 -6.812 -6.331 c -1.611 0.056 -3.143 0.716 -4.306 1.823 c -5.123 -3.49 -11.141 -5.403 -17.327 -5.537 l 2.919 -14.038 l 9.631 2.025 c 0.268 2.472 2.483 4.262 4.955 3.993 c 2.472 -0.268 4.262 -2.483 3.993 -4.955 s -2.483 -4.262 -4.955 -3.993 c -1.421 0.145 -2.696 0.973 -3.4 2.204 L 48.68 17.987 c -0.749 -0.168 -1.499 0.302 -1.667 1.063 c 0 0.011 0 0.011 0 0.022 l -3.322 15.615 c -6.264 0.101 -12.36 2.025 -17.55 5.537 c -2.64 -2.483 -6.801 -2.36 -9.284 0.291 c -2.483 2.64 -2.36 6.801 0.291 9.284 c 0.515 0.481 1.107 0.895 1.767 1.186 c -0.045 0.66 -0.045 1.32 0 1.98 c 0 10.078 11.745 18.277 26.23 18.277 c 14.485 0 26.23 -8.188 26.23 -18.277 c 0.045 -0.66 0.045 -1.32 0 -1.98 C 73.635 49.855 75.056 47.528 75.011 45 z M 30.011 49.508 c 0 -2.483 2.025 -4.508 4.508 -4.508 c 2.483 0 4.508 2.025 4.508 4.508 s -2.025 4.508 -4.508 4.508 C 32.025 53.993 30.011 51.991 30.011 49.508 z M 56.152 62.058 v -0.179 c -3.199 2.405 -7.114 3.635 -11.119 3.468 c -4.005 0.168 -7.919 -1.063 -11.119 -3.468 c -0.425 -0.515 -0.347 -1.286 0.168 -1.711 c 0.447 -0.369 1.085 -0.369 1.544 0 c 2.707 1.98 6.007 2.987 9.362 2.83 c 3.356 0.179 6.667 -0.783 9.407 -2.74 c 0.492 -0.481 1.297 -0.47 1.779 0.022 C 56.655 60.772 56.644 61.577 56.152 62.058 z M 55.537 54.34 c -0.078 0 -0.145 0 -0.224 0 l 0.034 -0.168 c -2.483 0 -4.508 -2.025 -4.508 -4.508 s 2.025 -4.508 4.508 -4.508 s 4.508 2.025 4.508 4.508 C 59.955 52.148 58.02 54.239 55.537 54.34 z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <p class="text">HOVER<br /><br />FOR<br /><br />SOCIAL</p>
+        <div class="main_back"></div>
+      </div>
+      
+</section>
+
+<section id="legal-notice">
+    <div class="container">
+        <h2>Información Legal</h2>
+        <p>El acceso y uso de esta página web está sujeto a las siguientes condiciones. Al acceder a este sitio, se acepta esta política en su totalidad.</p>
+
+        <h3>Responsabilidad</h3>
+        <p>Marc Pallares no se hace responsable de los errores u omisiones en los contenidos de la web, ni de los daños derivados de su uso. Los enlaces que aparecen en esta página son para facilitar el acceso a información de terceros, pero no implica que Marc Pallares avale los contenidos o servicios que se ofrecen.</p>
+
+        <h3>Propiedad Intelectual</h3>
+        <p>Todo el contenido de esta página, incluyendo textos, imágenes, gráficos, y cualquier otro material, son propiedad de Marc Pallares o de terceros que han autorizado su uso. Se prohíbe la reproducción, distribución, transformación, o comunicación pública de los contenidos de esta página sin el consentimiento expreso de Marc Pallares.</p>
+
+        <h3>Política de Privacidad</h3>
+        <p>Los datos personales que se recopilen a través de formularios en este sitio se tratarán de acuerdo a la normativa de protección de datos vigente. Para más información, consulte nuestra Política de Privacidad.</p>
+
+        <h3>Cambio de las Bases Legales</h3>
+        <p>Marc Pallares se reserva el derecho de modificar las presentes bases legales en cualquier momento. Los cambios serán publicados en esta página, siendo la fecha de la última modificación indicada al final del documento.</p>
+
+        <p>Última modificación: [Fecha de modificación]</p>
+    </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Marc Pallares. IesEbre.</p>
+                <ul class="footer-social-links">
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/mpallares1" target="_blank">GitHub</a></li>
+                    <li><a href="informa.html">Información Legal</a></li> <!-- Enlace a la sección de Información Legal -->
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+
+    <!-- Aviso de Cookies -->
+<div id="cookie-banner" class="cookie-banner">
+    <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas el uso de cookies. <a href="#privacy-policy">Más información</a>.</p>
+    <button id="accept-cookies" class="btn">Aceptar</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptCookiesButton = document.getElementById('accept-cookies');
+    
+            // Comprobar si las cookies han sido aceptadas
+            if (!localStorage.getItem('cookiesAccepted')) {
+                cookieBanner.style.display = 'block'; // Mostrar el banner
+            }
+    
+            // Manejar el clic en el botón de aceptar cookies
+            acceptCookiesButton.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true'); // Guardar la aceptación en el almacenamiento local
+                cookieBanner.style.display = 'none'; // Ocultar el banner
+            });
+        });
+    </script>
+    
+</div>
+
+
+    <!-- JavaScript para cambiar secciones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Obtener el ID de la sección a mostrar
+                    const targetSection = this.getAttribute('data-target');
+
+                    // Ocultar todas las secciones
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // Mostrar la sección correspondiente
+                    document.getElementById(targetSection).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
 </html>
