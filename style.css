@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -1204,6 +1205,173 @@ body.dark-mode footer {
 
 
 
+/* Contenedor general */
+.bg-white {
+  background-color: #f9fafb;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Espaciado en los lados */
+}
+
+/* Texto general */
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Encabezado del plan de precios */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 1.5rem;
+}
+
+/* Contenedor de cada plan */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem; /* Bordes más suaves */
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #374151;
+  max-width: 600px;
+  margin: 1rem auto; /* Espaciado uniforme entre tarjetas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: all 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el ratón sobre los planes */
+.flex:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mejorada en hover */
+  transform: translateY(-4px); /* Efecto flotante al hacer hover */
+}
+
+/* Plan seleccionado */
+.plan-selected {
+  border-color: #2563eb;
+  background-color: #e0f2fe; /* Fondo azul claro para resaltar el plan seleccionado */
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Icono del plan */
+svg {
+  width: 28px; /* Tamaño del icono */
+  height: 28px;
+  margin-right: 1rem;
+}
+
+.text-gray-400 {
+  color: #9ca3af;
+}
+
+.text-blue-600 {
+  color: #3b82f6;
+}
+
+/* Títulos de los planes */
+h2 {
+  font-size: 1.5rem; /* Tamaño de fuente consistente */
+  font-weight: 600;
+  margin: 0; /* Sin margen superior o inferior */
+}
+
+/* Precio */
+.price {
+  font-size: 2rem; /* Tamaño más grande para el precio */
+  font-weight: 700;
+  color: #374151;
+}
+
+.price span {
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño para la unidad */
+  color: #6b7280;
+}
+
+/* Texto de ahorro */
+.save-text {
+  font-size: 0.875rem; /* Tamaño de texto para "Save 20%" */
+  color: #3b82f6; /* Color azul */
+  background-color: #e0f2fe; /* Fondo azul claro */
+  padding: 0.25rem 0.5rem; /* Espaciado interno */
+  border-radius: 9999px; /* Bordes redondeados */
+}
+
+/* Botón principal */
+button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.5rem; /* Bordes redondeados */
+  font-size: 1rem; /* Tamaño de fuente adecuado */
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25); /* Sombra */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px); /* Efecto flotante en hover */
+}
+
+button:focus {
+  outline: none;
+  background-color: #1e40af;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+/* Modo oscuro */
+.dark {
+  background-color: #1f2937;
+}
+
+.dark .flex {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.dark h1,
+.dark h2 {
+  color: #f3f4f6;
+}
+
+.dark button {
+  background-color: #2563eb;
+}
+
+.dark button:hover {
+  background-color: #1d4ed8;
+}
+
+.dark button:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5);
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+  h1 {
+      font-size: 1.75rem; /* Ajustar tamaño en móviles */
+  }
+  h2 {
+      font-size: 1.25rem; /* Ajustar tamaño en móviles */
+  }
+  .price {
+      font-size: 1.5rem; /* Ajustar precio en móviles */
+  }
+}
 
 
 
