@@ -1374,6 +1374,50 @@ button:focus {
 }
 
 
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  body {
+      background-color: #f0f0f0;
+  }
+  h1 {
+      font-size: 24px;
+  }
+  h2 {
+      font-size: 20px;
+  }
+  p {
+      font-size: 16px;
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 601px) and (max-width: 900px) {
+  h1 {
+      font-size: 28px;
+  }
+  h2 {
+      font-size: 24px;
+  }
+  p {
+      font-size: 18px;
+  }
+}
+
+/* Estilos para escritorios */
+@media (min-width: 901px) {
+  h1 {
+      font-size: 32px;
+  }
+  h2 {
+      font-size: 28px;
+  }
+  p {
+      font-size: 20px;
+  }
+}
+
+
+
 
 
 /* <link rel="icon" type="image/svg+xml" href="/vite.svg" /> */
