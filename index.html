@@ -22,120 +22,33 @@
         </ul>
     </nav>
 
-    <div class="toggle-container">
-        <label class="switch">
-            <input type="checkbox" id="toggle">
-            <span class="slider"></span>
-        </label>
-        <span id="mode-text">Modo Claro</span>
-    </div>
-       <script>
-
-const toggle = document.getElementById('toggle');
-const modeText = document.getElementById('mode-text');
-const body = document.body;
-
-toggle.addEventListener('change', () => {
-    body.classList.toggle('dark-mode');
-    modeText.textContent = toggle.checked ? 'Modo Oscuro' : 'Modo Claro';
-});
-
-
-
-    </script>
-
-
-  <!-- Página Inici -->
-<!-- Página Inici -->
-<section id="home" class="hero active"> <!-- Activa por defecto -->
-    <div class="container">
-        <h1 class="hero-title">Hola, soc Marc Pallares</h1>
-        <p class="hero-subtitle">Soc estudiant de DAM.</p>
-        
-        <a href="#contact" data-target="contact" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
-
    
-        <!-- Logo arriba del mapa -->
-        <div class="logo-container">
-            <img src="/img/img1.jpeg" alt="Logo" class="logo">
+
+  <!-- Página de Inicio -->
+
+    <section id="home" class="hero active">
+        <div class="container">
+            <h1 class="hero-title">Marc Pallares Pino</h1>
+            <p class="hero-subtitle">Estudiant de DAM.</p>
+            <p class="hero-description">Transforma les teves idees en projectes web impressionants! Ofereixo la meva saviesa en HTML i CSS per ajudar-te a crear pàgines que capturin l'atenció dels usuaris.</p>
+            
+            <a href="" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
+            
+            <!-- Logo arriba del mapa -->
+            <div class="logo-container">
+                <img src="/img/img1.jpeg" alt="Logo" class="logo">
+            </div>
         </div>
-
-
-        <div class="bg-white dark:bg-gray-900">
-          <div class="container px-6 py-8 mx-auto">
-              <p class="text-xl text-center text-gray-500 dark:text-gray-300">
-                  Tria tu plan
-              </p>
-      
-              <h1 class="mt-4 text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">Plan</h1>
-      
-              <div class="mt-6 space-y-8 xl:mt-12">
-                  <div class="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl dark:border-gray-700">
-                      <div class="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                          </svg>
-      
-                          <div class="flex flex-col items-center mx-5 space-y-1">
-                              <h2 class="text-lg font-medium text-gray-700 sm:text-2xl dark:text-gray-200">Basic</h2>
-                              
-                              <div class="px-2 text-xs text-blue-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 ">
-                                ahorra 20%
-                              </div>
-                          </div>
-                      </div>
-      
-                      <h2 class="text-2xl font-semibold text-gray-500 sm:text-3xl dark:text-gray-300">$49 <span class="text-base font-medium">/mes</span></h2>
-                  </div>
-      
-                  <div class="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border border-blue-500 cursor-pointer rounded-xl">
-                      <div class="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                          </svg>
-      
-                          <div class="flex flex-col items-center mx-5 space-y-1">
-                              <h2 class="text-lg font-medium text-gray-700 sm:text-2xl dark:text-gray-200">Popular</h2>
-                              <div class="px-2 text-xs text-blue-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 ">
-                                  ahorra 20%
-                              </div>
-                          </div>
-                      </div>
-      
-                      <h2 class="text-2xl font-semibold text-blue-600 sm:text-4xl">$99 <span class="text-base font-medium">/mes</span></h2>
-                  </div>
-      
-                  <div class="flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl dark:border-gray-700">
-                      <div class="flex items-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
-                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                          </svg>
-      
-                          <div class="flex flex-col items-center mx-5 space-y-1">
-                              <h2 class="text-lg font-medium text-gray-700 sm:text-2xl dark:text-gray-200">Enterprise</h2>
-                              <div class="px-2 text-xs text-blue-500 bg-gray-100 rounded-full sm:px-4 sm:py-1 dark:bg-gray-700 ">
-                                ahorra 20%
-                              </div>
-                          </div>
-                      </div>
-      
-                      <h2 class="text-2xl font-semibold text-gray-500 sm:text-3xl dark:text-gray-300">$149 <span class="text-base font-medium">/mes</span></h2>
-                  </div>
-      
-                  <div class="flex justify-center">
-                      <button class="px-8 py-2 tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                          Tria tu Plan
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4290359664274!2d0.5126917765679695!3d40.81483093131317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a0e4bd4079a9d1%3A0x253c0ed9489c50f8!2sInstitut%20de%20l'Ebre!5e1!3m2!1sca!2ses!4v1727289760839!5m2!1sca!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+        <!-- Aquí va el fondo, bajo todo el contenido -->
+        <div class="background-image"></div>
+    
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/EvKm8yhM7V8?si=1B8UaD3hh1V0BTXL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen uk-responsive uk-video="automute: true"></iframe>
         </div>
-    </div>
+    </section>
+        
+  
 
 
     <script>

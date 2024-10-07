@@ -328,22 +328,6 @@ footer {
 }
 
 
-.map-container {
-  position: relative;
-  width: 100%;  /* Ancho completo del contenedor */
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura en % basada en el ancho) */
-  height: 0;  /* Altura inicial 0 */
-  overflow: hidden;  /* Ocultar el desbordamiento */
-}
-
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;  /* Ancho completo del contenedor */
-  height: 100%; /* Altura completa del contenedor */
-  border: 0;    /* Sin borde */
-}
 
 
 /* Animaciones */
@@ -429,23 +413,6 @@ footer {
 .skills-list li {
   font-size: 1.2rem; /* Tamaño de los elementos de la lista */
   margin: 5px 0; /* Margen vertical entre elementos */
-}
-
-.map-container {
-  position: relative;
-  width: 100%;  /* Ancho completo del contenedor */
-  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-  height: 0;  /* Altura inicial 0 */
-  overflow: hidden;  /* Ocultar el desbordamiento */
-}
-
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;  /* Ancho completo del contenedor */
-  height: 100%; /* Altura completa del contenedor */
-  border: 0;    /* Sin borde */
 }
 
 
@@ -1416,6 +1383,68 @@ button:focus {
   }
 }
 
+
+.background-image {
+  background-image: url('img/code.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra el div */
+  background-position: center; /* Centra la imagen en el div */
+  background-attachment: fixed; /* Fija la imagen para el efecto parallax */
+  min-height: 400px; /* Altura mínima para el div */
+  width: 100%; /* Ancho completo */
+  display: flex; /* Permite centrar contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el texto */
+  position: relative; /* Para el posicionamiento relativo */
+  z-index: 1; /* Para mantener el contenido por encima del fondo */
+}
+
+.background-image::before {
+  content: ""; /* Crea un pseudo-elemento */
+  position: absolute; /* Posiciona el pseudo-elemento */
+  top: 0; /* Parte superior */
+  left: 0; /* Parte izquierda */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura para mejorar legibilidad */
+  z-index: -1; /* Envía la capa oscura detrás del contenido */
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Mantiene la relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 1000px; /* Ancho máximo estándar */
+  width: 90%; /* Ancho completo del contenedor */
+  margin: 20px auto; /* Margen superior e inferior del video */
+
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+.btn {
+  background-color: #f44336; /* Color del botón */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado del botón */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición para el hover */
+}
+
+.btn:hover {
+  background-color: #c62828; /* Color del botón al pasar el ratón */
+}
 
 
 
