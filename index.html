@@ -30,7 +30,7 @@
         <div class="container">
             <h1 class="hero-title">Marc Pallares Pino</h1>
             <p class="hero-subtitle">Estudiant de DAM.</p>
-            <p class="hero-description">Transforma les teves idees en projectes web impressionants! Ofereixo la meva saviesa en HTML i CSS per ajudar-te a crear pàgines que capturin l'atenció dels usuaris.</p>
+            <p class="hero-description">Transforma les teves idees en projectes web impressionants! Ofereixo les meves habilitats en HTML i CSS per ajudar-te a crear pàgines que capturin l'atenció dels usuaris.</p>
             
             <a href="" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
             
@@ -175,7 +175,7 @@
         </a>
       </div>
       
-              <p class="text">XARXES<br /><br />SOCIALS</p>
+              <p class="text"><br /><br /></p>
         <div class="main_back"></div>
       </div>
       
@@ -360,27 +360,46 @@
 
     <!-- JavaScript para cambiar secciones -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const sections = document.querySelectorAll('section');
+       // Script para el manejo del banner de cookies
+document.addEventListener("DOMContentLoaded", function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
+    // Comprobar si las cookies han sido aceptadas
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.style.display = 'block'; // Mostrar el banner
+    }
 
-                    // Obtener el ID de la sección a mostrar
-                    const targetSection = this.getAttribute('data-target');
+    // Manejar el clic en el botón de aceptar cookies
+    acceptCookiesButton.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true'); // Guardar la aceptación en el almacenamiento local
+        cookieBanner.style.display = 'none'; // Ocultar el banner
+    });
+});
 
-                    // Ocultar todas las secciones
-                    sections.forEach(section => {
-                        section.classList.remove('active');
-                    });
+// Script para cambiar secciones
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
 
-                    // Mostrar la sección correspondiente
-                    document.getElementById(targetSection).classList.add('active');
-                });
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Obtener el ID de la sección a mostrar
+            const targetSection = this.getAttribute('data-target');
+
+            // Ocultar todas las secciones
+            sections.forEach(section => {
+                section.classList.remove('active');
             });
+
+            // Mostrar la sección correspondiente
+            document.getElementById(targetSection).classList.add('active');
         });
+    });
+});
+
     </script>
 </body>
 </html>
