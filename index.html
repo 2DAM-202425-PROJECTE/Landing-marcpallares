@@ -12,20 +12,17 @@
     <!-- Navbar -->
     <nav class="navbar">
         <ul class="nav-links">
-       
-            <li><a href="#" data-target="projects">Projectes</a></li>
-            <li><a href="#" data-target="skills">Habilitats</a></li>
-            <li><a href="#" data-target="home">Inici</a></li>
-            <li><a href="#" data-target="sobremi">Sobre Mi</a></li>
-            <li><a href="#" data-target="plan">Plan</a></li>
-            <li><a href="#" data-target="contact">Contacte</a></li>
-        
-
+            <li><a href="#projects" data-target="projects">Projectes</a></li>
+            <li><a href="#skills" data-target="skills">Habilitats</a></li>
+            <li><a href="#home" data-target="home">Inici</a></li>
+            <li><a href="#pricing" data-target="plan">Plan</a></li>
+            <li><a href="#contact" data-target="contact">Contacte</a></li>
         </ul>
     </nav>
+    
 
 <!-- Página de Inicio -->
-<section id="home" class="hero active">
+<section id="home" >
     <div class="container">
         <h1 class="hero-title">Marc Pallares Pino</h1>
         <p class="hero-subtitle">Estudiant de DAM.</p>
@@ -53,13 +50,17 @@
 <section id="sobremi">
   <div class="container">
 
-  <h2>Sobre Mí</h2>
+    <h2>Sobre Mí</h2>
 
-  <p>Hola! Sóc Marc Pallares, un apassionat del desenvolupament web i la programació. Actualment, estic estudiant Desenvolupament d'Aplicacions Multiplataforma (DAM) i m'agrada explorar noves tecnologies i eines per crear projectes innovadors. Em dedico a aprendre llenguatges com HTML, CSS, JavaScript i frameworks com React.</p>
-  
-  <p>A més del meu interès per la tecnologia, gaudeixo de la música i el cinema, i m'agrada passar temps a la natura. Sempre estic a la recerca de noves oportunitats d'aprenentatge i creixement professional. Si t'interessa la meva feina o vols col·laborar, no dubtis a posar-te en contacte amb mi!</p>
- 
-
+    <p>Hola! Sóc Marc Pallares, un apassionat del desenvolupament web i la programació. Actualment, estic estudiant Desenvolupament d'Aplicacions Multiplataforma (DAM) i m'agrada explorar noves tecnologies i eines per crear projectes innovadors. Em dedico a aprendre llenguatges com HTML, CSS, JavaScript i frameworks com React.</p>
+    
+    <p>A més del meu interès per la tecnologia, gaudeixo de la música i el cinema, i m'agrada passar temps a la natura. Sempre estic a la recerca de noves oportunitats d'aprenentatge i creixement professional. Si t'interessa la meva feina o vols col·laborar, no dubtis a posar-te en contacte amb mi!</p>
+    
+    <!-- Botón para descargar el CV -->
+    <div class="cv-button-container">
+        <a href="img/CVMarc-mp13.pdf" class="cv-button" download>Descarregar CV</a>
+    </div>
+    
   <div class="container">
     <h2>Xarxes Socials</h2>
     <p>Pots entrar a les meves xarxes socials per obtenir més informació sobre mi o contactar amb mi.</p>
@@ -124,7 +125,7 @@
                     <li>Actualizaciones semanales</li>
                     <li>Acceso a webinars exclusivos</li>
                 </ul>
-                <a href="plan.html" class="btn select-plan premium-btn">Seleccionar Pla</a>
+                <a href="planpremium.html" class="btn select-plan premium-btn">Seleccionar Pla</a>
             </div>
         </div>
     </div>
@@ -254,8 +255,21 @@
 
 
 
-
-
+<section id="ubicacion" class="ubicacion">
+    <h2>Ubicació</h2>
+    <p>Pots trobar-me a la bella ciutat de Barcelona, on estic treballant en projectes emocionants i aprenent noves tecnologies. Si desitges visitar-me, aquí tens la meva ubicació:</p>
+    
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224790.32419742947!2d2.086058008036748!3d41.4036291038983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5a29e0e627c1d%3A0x22ec3e1e3a95ebef!2sBarcelona%2C%20Espanya!5e0!3m2!1ses!2sus!4v1664331997233!5m2!1ses!2sus"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+        ></iframe>
+    </div>
+</section>
 
 
 

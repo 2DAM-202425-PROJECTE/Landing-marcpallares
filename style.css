@@ -182,22 +182,22 @@ a {
 
 /* Video container */
 .video-container {
-  margin: 180px ; /* Centramos el contenedor y ajustamos el margen superior e inferior */
-  position: relative;
-  max-width: 1000px; /* Aumentar el max-width para hacerlo más grande */
-  padding: 0 5rem; /* Ajustamos el padding lateral para que se vea más elegante */
+  margin: 600px auto ; /* Centramos el contenedor y ajustamos el margen superior e inferior */
+  position: fixed;
+  max-width: 0px auto; /* Aumentar el max-width para hacerlo más grande */
+  padding: 0  auto; /* Ajustamos el padding lateral para que se vea más elegante */
 }
 
 .video-container iframe {
-  width: 300%;
-  height: 500px; /* Añadir altura fija para aumentar la visibilidad */
-  border-radius: 5px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); /* Sombra más intensa para un mejor efecto */
+  width: 105%;
+  height: 400px; /* Añadir altura fija para aumentar la visibilidad */
+  border-radius: 0px;
+  box-shadow: 0 0px 25px rgba(0, 0, 0, 0.3); /* Sombra más intensa para un mejor efecto */
   transition: transform 0.3s ease; /* Transición para el video */
 }
 
 .video-container iframe:hover {
-  transform: scale(1.05); /* Aumentar un poco el efecto de escala al hacer hover */
+  transform: scale(1.0); /* Aumentar un poco el efecto de escala al hacer hover */
 }
 
 /* Imagen de fondo con parallax y movimiento */
@@ -490,6 +490,30 @@ a {
 .social-btn:hover img {
   transform: rotate(360deg); /* Animación de rotación del ícono en hover */
 }
+
+
+.cv-button-container {
+  text-align: center; /* Centrar el botón */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 12px 24px; /* Espaciado del botón */
+  font-size: 16px; /* Tamaño del texto */
+  color: #fff; /* Color del texto */
+  background-color: #00bfa6; /* Color de fondo */
+  border-radius: 25px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.cv-button:hover {
+  background-color: #008f79; /* Color de fondo al pasar el ratón */
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
 
 /* Estilos específicos para cada botón */
 .github-btn {
@@ -1029,4 +1053,49 @@ footer .footer-bottom p {
 
 .cookie-banner .btn:hover {
   background-color: #0e8cc1; /* Color del botón al pasar el ratón */
+}
+
+
+/* Estilos de la Sección de Ubicación */
+.ubicacion {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.ubicacion h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.ubicacion p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 800px; /* Ancho máximo para el texto */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center; /* Centra el iframe */
+  margin: 0 auto; /* Centra el contenedor */
+  border-radius: 12px; /* Bordes redondeados */
+  overflow: hidden; /* Esconde el contenido que sobresale */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.map-container iframe {
+  border: none; /* Eliminar el borde del iframe */
+  width: 100%; /* Ancho completo */
+  height: 450px; /* Altura fija */
+  border-radius: 12px; /* Bordes redondeados para el iframe */
+}
+
+@media (max-width: 768px) {
+  .map-container iframe {
+      height: 300px; /* Altura ajustada en pantallas pequeñas */
+  }
 }
