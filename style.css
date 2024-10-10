@@ -18,45 +18,87 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
 /* Navbar */
 .navbar {
-  background-color: #1a1a1a;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease; /* Transición suave */
+  background-color: #1a1a1a; /* Fondo oscuro */
+  padding: 1rem 2rem; /* Espaciado */
+  position: fixed; /* Fijo en la parte superior */
+  top: 0; /* Al borde superior */
+  width: 100%; /* Ancho completo */
+  z-index: 10; /* Asegurarse de que esté encima de otros elementos */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Transición suave */
 }
 
+/* Cambia el fondo al hacer scroll */
 .navbar.scrolled {
-  background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro al hacer scroll */
+  background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro */
+  padding: 0.5rem 2rem; /* Menor espaciado al hacer scroll */
 }
 
+/* Estilos para la lista de enlaces */
 .nav-links {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+  display: flex; /* Flexbox para alineación */
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: center; /* Centrar verticalmente */
+  list-style: none; /* Sin puntos de lista */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
 }
 
+/* Estilo para los enlaces */
 .nav-links li {
-  position: relative;
+  position: relative; /* Para el pseudo-elemento */
 }
 
 .nav-links a {
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease, transform 0.2s ease; /* Añadido efecto de transformación */
+  color: #fff; /* Color del texto */
+  font-size: 1.1rem; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de la fuente */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* Añadido efecto de transición */
+  border-radius: 8px; /* Bordes redondeados */
 }
 
+/* Efecto al pasar el ratón por encima */
 .nav-links a:hover {
-  color: #00bfa6;
+  color: #00bfa6; /* Color de texto en hover */
   transform: scale(1.05); /* Efecto de escala */
+  background-color: rgba(0, 191, 166, 0.2); /* Fondo suave al hacer hover */
 }
+
+/* Pseudo-elemento para subrayado */
+.nav-links a::after {
+  content: ''; /* Necesario para mostrar el pseudo-elemento */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 50%; /* Centrar horizontalmente */
+  bottom: 0; /* Colocar en la parte inferior */
+  width: 0; /* Ancho inicial */
+  height: 2px; /* Altura de la línea */
+  background: #00bfa6; /* Color de la línea */
+  transition: width 0.3s ease, left 0.3s ease; /* Transición para el efecto de subrayado */
+}
+
+/* Efecto de subrayado al pasar el ratón */
+.nav-links a:hover::after {
+  width: 100%; /* Ancho completo al hacer hover */
+  left: 0; /* Alinear a la izquierda */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Cambiar a columna en móviles */
+    align-items: flex-start; /* Alinear a la izquierda */
+  }
+
+  .nav-links a {
+    padding: 0.5rem; /* Ajustar el padding */
+    width: 100%; /* Ancho completo en móviles */
+  }
+}
+
 
 /* Hero Section */
 .hero {
@@ -158,6 +200,64 @@ a {
   transform: scale(1.05); /* Aumentar un poco el efecto de escala al hacer hover */
 }
 
+/* Imagen de fondo con parallax y movimiento */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('img/astronauta.jpeg') no-repeat center center/cover; /* Cambia la URL por la imagen deseada */
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+  filter: blur(5px); /* Añade un poco de desenfoque para mejorar la legibilidad del texto */
+  animation: moveBackground 20s ease-in-out infinite; /* Animación suave de movimiento */
+  background-attachment: fixed; /* Efecto Parallax */
+  opacity: 0.8; /* Un poco de transparencia para suavizar el fondo */
+}
+
+/* Animación sutil para la imagen de fondo */
+@keyframes moveBackground {
+  0% {
+    background-position: center center;
+  }
+  50% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center center;
+  }
+}
+
+/* Estilo para asegurar la legibilidad del texto */
+.hero-title, .hero-subtitle, .hero-description {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté sobre la imagen */
+  color: #fff; /* Contraste del texto con la imagen de fondo */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave para mejorar la legibilidad */
+}
+
+/* Estilo para el botón */
+.hero .btn {
+  z-index: 2; /* El botón debe estar sobre la imagen */
+  background-color: #00bfa6;
+  color: white;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #008f79;
+}
+
+/* Ajustes para el contenedor del video */
+.video-container {
+  margin-top: 60px;
+  position: relative;
+  max-width: 1000px;
+  padding: 0 1rem;
+  z-index: 2; /* Asegura que el video esté sobre la imagen de fondo */
+}
+
 /* Animaciones */
 @keyframes fadeIn {
   0% {
@@ -201,6 +301,106 @@ a {
   .nav-links li {
       margin: 0.5rem 0;
   }
+}
+
+
+/* Contenedor de la sección de precios */
+.pricing-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.pricing-plans {
+  display: flex;
+  justify-content: center;
+  gap: 3rem; /* Espacio entre las tarjetas */
+}
+
+/* Estilo general para los planes */
+.plan {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  width: 100%;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Títulos y precios */
+.plan-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.plan-price {
+  font-size: 2.2rem;
+  color: #00bfa6;
+  margin-bottom: 1.5rem;
+}
+
+/* Lista de características */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.plan-features li {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Botón para seleccionar el plan */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #00bfa6;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #008f79;
+}
+
+.premium-btn {
+  background-color: #ff7e00;
+}
+
+.premium-btn:hover {
+  background-color: #e66b00;
+}
+
+/* Estilos diferenciados para el plan Premium */
+.plan.premium {
+  border: 2px solid #ff7e00;
+}
+
+.plan.premium .plan-title {
+  color: #ff7e00;
 }
 
 
@@ -248,77 +448,107 @@ a {
   margin-bottom: 2rem;
 }
 
-/* Redes Sociales - Estilo de Tarjetas */
-.main {
+/* Redes Sociales - Botones */
+.social-buttons {
   display: flex;
-  justify-content: center; /* Centrar elementos en el contenedor */
+  justify-content: center; /* Centrar botones */
   align-items: center; /* Alinear verticalmente */
-  gap: 3rem; /* Aumento del espacio entre tarjetas */
-  flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en múltiples líneas */
+  gap: 3rem; /* Espacio entre botones */
+  flex-wrap: wrap; /* Ajustar en varias líneas si es necesario */
 }
 
-.card {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 16px; /* Aumento en el radio de los bordes */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  width: 80px; /* Ancho fijo */
-  height: 80px; /* Alto fijo */
+.social-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px; /* Espacio entre el icono y el texto */
+  padding: 1rem;
+  border-radius: 16px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: #fff;
+  width: 160px; /* Ajustar ancho del botón */
+  height: 60px; /* Ajustar alto del botón */
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.card:hover {
+.social-btn:hover {
   transform: scale(1.1) translateY(-5px); /* Efecto de escala */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  background-color: #f9f9fb; /* Cambio de color de fondo al hacer hover */
+  background-color: #f9f9fb; /* Cambio de fondo en hover */
 }
 
-.card svg {
-  width: 50px;
-  height: 50px;
-  fill: #00bfa6;
-  transition: fill 0.3s ease;
+.social-btn img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
 }
 
-.card:hover svg {
-  fill: #008f79; /* Cambio de color del ícono */
+.social-btn:hover img {
+  transform: rotate(360deg); /* Animación de rotación del ícono en hover */
 }
 
-.text {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #444;
-  margin-top: 1rem;
+/* Estilos específicos para cada botón */
+.github-btn {
+  background-color: #333;
+  color: white;
 }
 
-.main_back {
-  width: 100%;
-  height: 2px;
-  background: #00bfa6;
-  margin-top: 1rem;
-  opacity: 0.8;
+.github-btn:hover {
+  background-color: #24292e;
+}
+
+.twitter-btn {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.twitter-btn:hover {
+  background-color: #1991db;
+}
+
+.instagram-btn {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+
+.instagram-btn:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 40%, #d6249f 55%, #285AEB 85%);
+}
+
+.linkedin-btn {
+  background-color: #0077b5;
+  color: white;
+}
+
+.linkedin-btn:hover {
+  background-color: #005983;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .main {
-    gap: 1.5rem; /* Reducir el espacio entre tarjetas en pantallas más pequeñas */
+  .social-buttons {
+    gap: 1.5rem; /* Reducir el espacio entre botones en pantallas más pequeñas */
   }
 
-  .card {
-    width: 60px; /* Ajustar el tamaño de las tarjetas */
-    height: 60px; /* Ajustar el tamaño de las tarjetas */
+  .social-btn {
+    width: 140px; /* Ajustar tamaño del botón */
+    height: 50px; /* Ajustar tamaño del botón */
   }
 
-  .card svg {
-    width: 40px; /* Ajustar tamaño del ícono */
-    height: 40px; /* Ajustar tamaño del ícono */
+  .social-btn img {
+    width: 24px; /* Ajustar tamaño del ícono */
+    height: 24px;
   }
 
-  .text {
+  .container h2 {
+    font-size: 1.5rem; /* Ajustar tamaño del título */
+  }
+
+  .container p {
     font-size: 1rem; /* Ajustar tamaño del texto */
   }
 }

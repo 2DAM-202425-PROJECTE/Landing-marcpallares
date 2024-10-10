@@ -1,0 +1,146 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7f6; /* Color de fondo suave */
+    color: #333;
+}
+
+/* Estilos para el contenedor del iframe */
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px; /* Ajuste para pantallas grandes */
+    margin: 100px auto; /* Centrado con margen superior para no chocar con la navbar */
+    padding: 30px;
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Sombra sutil */
+    border-radius: 15px; /* Bordes redondeados */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iframe-container:hover {
+    transform: scale(1.02); /* Efecto hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Sombra más profunda en hover */
+}
+
+iframe {
+    width: 100%;
+    height: 80vh; /* Altura dinámica según la pantalla */
+    border: none;
+    border-radius: 12px; /* Bordes redondeados para el iframe */
+}
+
+/* Estilos de la navbar */
+.navbar {
+    width: 100%;
+    padding: 20px; /* Espaciado superior e inferior */
+    background-color: #1a1a1a; /* Fondo oscuro elegante */
+    position: fixed; /* Fija en la parte superior */
+    top: 0; /* Al borde superior */
+    left: 0; /* Al borde izquierdo */
+    z-index: 1000; /* Por encima de otros elementos */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el fondo al hacer scroll */
+.navbar.scrolled {
+    background-color: rgba(26, 26, 26, 0.9); /* Fondo oscuro */
+}
+
+/* Estilo para los enlaces */
+.nav-links {
+    list-style: none; /* Sin puntos de lista */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin padding */
+    display: flex; /* Flexbox para disposición */
+    justify-content: center; /* Centrados horizontalmente */
+    align-items: center; /* Centrados verticalmente */
+}
+
+/* Estilo para los elementos de la lista */
+.nav-links li {
+    position: relative; /* Para el pseudo-elemento */
+    margin: 0 20px; /* Espaciado entre elementos */
+}
+
+.nav-links a {
+    color: #f4f7f6; /* Texto claro */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px; /* Tamaño de fuente */
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al pasar el ratón por encima */
+.nav-links a:hover {
+    color: #50c878; /* Color de texto al hacer hover */
+    background-color: rgba(80, 200, 120, 0.2); /* Fondo suave al hacer hover */
+}
+
+/* Pseudo-elemento para subrayado */
+.nav-links a::after {
+    content: ''; /* Necesario para mostrar el pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrar horizontalmente */
+    bottom: 0; /* Colocar en la parte inferior */
+    width: 0; /* Ancho inicial */
+    height: 2px; /* Altura de la línea */
+    background: #50c878; /* Color de la línea */
+    transition: width 0.3s ease, left 0.3s ease; /* Transición para el efecto de subrayado */
+}
+
+/* Efecto de subrayado al pasar el ratón */
+.nav-links a:hover::after {
+    width: 100%; /* Ancho completo al hacer hover */
+    left: 0; /* Alinear a la izquierda */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Cambiar a columna en móviles */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .nav-links a {
+        padding: 0.5rem; /* Ajustar el padding */
+        width: 100%; /* Ancho completo en móviles */
+        text-align: left; /* Alinear texto a la izquierda */
+    }
+}
+
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .iframe-container {
+        padding: 20px;
+        max-width: 100%;
+        margin: 80px 10px; /* Ajuste de margen para pantallas pequeñas */
+    }
+
+    iframe {
+        height: 60vh; /* Ajuste dinámico en pantallas más pequeñas */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
