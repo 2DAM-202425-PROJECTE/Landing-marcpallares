@@ -9,17 +9,40 @@
 
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#projects" data-target="projects">Projectes</a></li>
-            <li><a href="#skills" data-target="skills">Habilitats</a></li>
-            <li><a href="#home" data-target="home">Inici</a></li>
-            <li><a href="#pricing" data-target="plan">Plan</a></li>
-            <li><a href="#contact" data-target="contact">Contacte</a></li>
-        </ul>
-    </nav>
-    
+
+<!-- Navbar -->
+<div class="menu-icon" onclick="toggleNav()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+</div>
+
+<nav class="navbar" id="sideNavbar">
+    <ul class="nav-links">
+        <li><a href="#projects" data-target="projects">Projectes</a></li>
+        <li><a href="#skills" data-target="skills">Habilitats</a></li>
+        <li><a href="#home" data-target="home">Inici</a></li>
+        <li><a href="#pricing" data-target="plan">Plan</a></li>
+        <li><a href="#contact" data-target="contact">Contacte</a></li>
+    </ul>
+
+
+
+    <script>
+
+function toggleNav() {
+  const nav = document.getElementById('sideNavbar');
+  const menuIcon = document.querySelector('.menu-icon');
+  nav.classList.toggle('active');
+  menuIcon.classList.toggle('change');
+}
+
+
+
+    </script>
+
+</nav>
+
 
 <!-- Página de Inicio -->
 <section id="home" >
@@ -28,7 +51,7 @@
         <p class="hero-subtitle">Estudiant de DAM.</p>
         <p class="hero-description">Transforma les teves idees en projectes web impressionants! Ofereixo les meves habilitats en HTML i CSS per ajudar-te a crear pàgines que capturin l'atenció dels usuaris.</p>
         
-        <a href="" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
+        <a href="#contact" class="btn">Contáctame</a> <!-- Botón de llamada a la acción -->
         
         <!-- Logo arriba del mapa -->
         <div class="logo-container">
@@ -273,10 +296,16 @@
 
 
 
+
+
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
+                <!-- Botón de scroll hacia arriba -->
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Ir Arriba">↑</button>
+
                 <p>&copy; 2024 Marc Pallares. IesEbre.</p>
                 <ul class="footer-social-links">
                     <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
@@ -292,7 +321,25 @@
     </footer>
     
     
-    
+    <script>
+        // Mostrar el botón cuando se baja la página
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+}
+
+// Función para scroll suave hacia arriba
+function scrollToTop() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+    </script>
 
     <!-- Aviso de Cookies -->
 <div id="cookie-banner" class="cookie-banner">
@@ -358,6 +405,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // Mostrar la sección correspondiente
             document.getElementById(targetSection).classList.add('active');
         });
+    });
+});
+document.querySelector('.btn').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevenir el comportamiento estándar del enlace
+    document.querySelector('#contact').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
     });
 });
 
